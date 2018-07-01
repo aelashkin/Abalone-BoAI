@@ -78,6 +78,50 @@ called <code class="docutils literal notranslate"><span class="pre">ai.py</span>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="mi">1</span> <span class="n">my</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">ai</span>
 </pre></div>
 </div>
+<div class="section" id="turn-board-opponent">
+<h2><code class="docutils literal notranslate"><span class="pre">turn(board,</span> <span class="pre">opponent)</span></code><a class="headerlink" href="#turn-board-opponent" title="Permalink to this headline">¶</a></h2>
+<p>This function shall return a tuple with a list and an integer value.</p>
+<p>The first value is a list of the marbles to be moved. A marble is represented
+by a string denoting the space it rests in.</p>
+<p>Each space on the board is denoted by a string that consist of a row letter
+(from A to I) and a diagonal number (from 1 to 9). The notation is
+case-insensitive and does not require a specific order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    I · · · · ·
+   H · · · · · ·
+  G · · · · · · ·
+ F · · · · · · · ·
+E · · · · · · · · ·
+ D · · · · · · · · 9
+  C · · · · · · · 8
+   B · · · · · · 7
+    A · · · · · 6
+       1 2 3 4 5
+</pre></div>
+</div>
+<p>The second value in the tuple is an integer between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> (inclusive)
+that represents the direction of movement.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> 6 1
+5 · 2
+ 4 3
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>northeast</li>
+<li>east</li>
+<li>southeast</li>
+<li>southwest</li>
+<li>west</li>
+<li>northwest</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">board</span></code> parameter contains a dict that represents the current state of
+the board. It maps strings denoting the spaces in standard notation to
+integers where <code class="docutils literal notranslate"><span class="pre">0</span></code> stands for empty spaces, <code class="docutils literal notranslate"><span class="pre">1</span></code> for the player’s own
+spaces and <code class="docutils literal notranslate"><span class="pre">-1</span></code> for the opponent’s spaces.</p>
+<p>The standard notation, which is used for the keys in the board dict, starts
+with a capital row letter followed by a diagonal number.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">opponentMove</span></code> parameter contains the opponent’s most recent move, i. e.
+the returned value of the opponent’s <code class="docutils literal notranslate"><span class="pre">turn</span></code> function.</p>
+</div>
 </div>
 
 
