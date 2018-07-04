@@ -38,15 +38,9 @@
         
   <div class="section" id="webview">
 <h1>Webview<a class="headerlink" href="#webview" title="Permalink to this headline">¶</a></h1>
-<p>At the end of the game a <code class="docutils literal notranslate"><span class="pre">course_of_the_game.json</span></code> file is created. Using
-this file the course of the game can be viewed in a web browser. For that
-purpose, the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in the <code class="docutils literal notranslate"><span class="pre">html</span></code> directory must be delivered
-via a web server.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Opening the file in a web browser via the <code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol does
-not work for CORS reasons.</p>
-</div>
+<p>At the end of the game a link (<code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol) is output. Open this exact
+link in a web browser, make sure to include the query parameter. It might not
+be enough to click on the link, it may need to be copied and pasted manually.</p>
 </div>
 
 
