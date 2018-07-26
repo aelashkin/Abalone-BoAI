@@ -9,7 +9,7 @@
     <title>main module &#8212; Abalone BoAI 1.2.0rc documentation</title>
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -39,14 +39,14 @@
   <div class="section" id="module-main">
 <span id="main-module"></span><h1>main module<a class="headerlink" href="#module-main" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="main.initGame">
-<code class="descclassname">main.</code><code class="descname">initGame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.initGame" title="Permalink to this definition">¶</a></dt>
+<dt id="main.init_game">
+<code class="descclassname">main.</code><code class="descname">init_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.init_game" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the game to its initial state and print the board.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="main.parseArgs">
-<code class="descclassname">main.</code><code class="descname">parseArgs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.parseArgs" title="Permalink to this definition">¶</a></dt>
+<dt id="main.parse_args">
+<code class="descclassname">main.</code><code class="descname">parse_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.parse_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the command line arguments.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -61,16 +61,16 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="main.runGame">
-<code class="descclassname">main.</code><code class="descname">runGame</code><span class="sig-paren">(</span><em>player1</em>, <em>player2</em><span class="sig-paren">)</span><a class="headerlink" href="#main.runGame" title="Permalink to this definition">¶</a></dt>
+<dt id="main.run_game">
+<code class="descclassname">main.</code><code class="descname">run_game</code><span class="sig-paren">(</span><em>p1</em>, <em>p2</em><span class="sig-paren">)</span><a class="headerlink" href="#main.run_game" title="Permalink to this definition">¶</a></dt>
 <dd><p>The main game loop.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>player1</strong> (<em>module</em>) – an AI that plays as player 1 (black)</li>
-<li><strong>player2</strong> (<em>module</em>) – an AI that plays as player 2 (white)</li>
+<li><strong>p1</strong> (<em>module</em>) – an AI that plays as player 1 (black)</li>
+<li><strong>p2</strong> (<em>module</em>) – an AI that plays as player 2 (white)</li>
 </ul>
 </td>
 </tr>
@@ -79,15 +79,14 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="main.saveCourseOfTheGameToFile">
-<code class="descclassname">main.</code><code class="descname">saveCourseOfTheGameToFile</code><span class="sig-paren">(</span><em>courseOfTheGame</em><span class="sig-paren">)</span><a class="headerlink" href="#main.saveCourseOfTheGameToFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the course of the game to a JSON file (<code class="docutils literal notranslate"><span class="pre">course_of_the_game.json</span></code>)
-in the project directory.</p>
+<dt id="main.save_course_of_the_game_to_file">
+<code class="descclassname">main.</code><code class="descname">save_course_of_the_game_to_file</code><span class="sig-paren">(</span><em>course_of_the_game</em><span class="sig-paren">)</span><a class="headerlink" href="#main.save_course_of_the_game_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the course of the game to a JSON file in the results directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>courseOfTheGame</strong> – The course of the game to be saved</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>course_of_the_game</strong> – The course of the game to be saved</td>
 </tr>
 </tbody>
 </table>
@@ -97,8 +96,8 @@ in the project directory.</p>
 game in chronological order</li>
 <li><code class="docutils literal notranslate"><span class="pre">moveHistory</span></code>: a list of all moves, i. e. the return values of the
 players’ <code class="docutils literal notranslate"><span class="pre">turn</span></code> functions, during the game in chronological order</li>
-<li><code class="docutils literal notranslate"><span class="pre">scoreHistory</span></code>: a list of tuples of two integer values representing the
-players’ scores during the game in chronological order</li>
+<li><code class="docutils literal notranslate"><span class="pre">scoreHistory</span></code>: a list of tuples of two integer values representing
+the players’ scores during the game in chronological order</li>
 <li><code class="docutils literal notranslate"><span class="pre">startPlayer</span></code>: the player (<code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>) that started the game</li>
 <li><code class="docutils literal notranslate"><span class="pre">winner</span></code>: The player (<code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>) that won the game</li>
 <li><code class="docutils literal notranslate"><span class="pre">exitReason</span></code>: the error message if an error has occurred</li>
@@ -129,7 +128,7 @@ players’ scores during the game in chronological order</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018 Scriptim (MIT).
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>

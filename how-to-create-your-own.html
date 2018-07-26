@@ -9,7 +9,7 @@
     <title>How to create your own &#8212; Abalone BoAI 1.2.0rc documentation</title>
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -48,14 +48,14 @@ clone it.</p>
 <li><p class="first">Create a new subdirectory in the <code class="docutils literal notranslate"><span class="pre">ais</span></code> directory with the name of your AI.</p>
 </li>
 <li><p class="first">Create a Python file (<code class="docutils literal notranslate"><span class="pre">.py</span></code>) in that directory that implements
-<code class="docutils literal notranslate"><span class="pre">turn(board,</span> <span class="pre">opponentMove)</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">turn</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">opponentMove</span><span class="p">):</span>
+<code class="docutils literal notranslate"><span class="pre">turn(board,</span> <span class="pre">opponent_move)</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">turn</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">opponent_move</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;My AI.</span>
 
 <span class="sd">   :param board: the current state of the board</span>
 <span class="sd">   :type board: dict</span>
-<span class="sd">   :param opponentMove: the opponent&#39;s last move</span>
-<span class="sd">   :type opponentMove: tuple(list[str], int) | None</span>
+<span class="sd">   :param opponent_move: the opponent&#39;s last move</span>
+<span class="sd">   :type opponent_move: tuple(list[str], int) | None</span>
 <span class="sd">   :return: the move to be performed</span>
 <span class="sd">   :rtype: tuple(list[str], int)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
@@ -78,8 +78,8 @@ called <code class="docutils literal notranslate"><span class="pre">ai.py</span>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="mi">1</span> <span class="n">my</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">ai</span>
 </pre></div>
 </div>
-<div class="section" id="turn-board-opponentmove">
-<h2><code class="docutils literal notranslate"><span class="pre">turn(board,</span> <span class="pre">opponentMove)</span></code><a class="headerlink" href="#turn-board-opponentmove" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="turn-board-opponent-move">
+<h2><code class="docutils literal notranslate"><span class="pre">turn(board,</span> <span class="pre">opponent_move)</span></code><a class="headerlink" href="#turn-board-opponent-move" title="Permalink to this headline">¶</a></h2>
 <p>This function shall return a tuple with a list and an integer value.</p>
 <p>The first value is a list of the marbles to be moved. A marble is represented
 by a string denoting the space it rests in.</p>
@@ -119,7 +119,7 @@ integers where <code class="docutils literal notranslate"><span class="pre">0</s
 spaces and <code class="docutils literal notranslate"><span class="pre">-1</span></code> for the opponent’s spaces.</p>
 <p>The standard notation, which is used for the keys in the board dict, starts
 with a capital row letter followed by a diagonal number.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">opponentMove</span></code> parameter contains the opponent’s most recent move, i. e.
+<p>The <code class="docutils literal notranslate"><span class="pre">opponent_move</span></code> parameter contains the opponent’s most recent move, i. e.
 the returned value of the opponent’s <code class="docutils literal notranslate"><span class="pre">turn</span></code> function.</p>
 </div>
 </div>
@@ -140,7 +140,7 @@ the returned value of the opponent’s <code class="docutils literal notranslate
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018 Scriptim (MIT).
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>

@@ -9,13 +9,13 @@
     <title>game module &#8212; Abalone BoAI 1.2.0rc documentation</title>
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="interactivePlayer module" href="interactivePlayer.html" />
+    <link rel="next" title="ais.interactive_player module" href="interactive_player.html" />
     <link rel="prev" title="main module" href="main.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
@@ -29,7 +29,7 @@
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="interactivePlayer.html">interactivePlayer module</a>&#160;&#160;»
+        <a href="interactive_player.html">ais.interactive_player module</a>&#160;&#160;»
         </p>
 
       </div>
@@ -47,8 +47,8 @@ move.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.areStraightLine">
-<code class="descclassname">game.</code><code class="descname">areStraightLine</code><span class="sig-paren">(</span><em>spaces</em><span class="sig-paren">)</span><a class="headerlink" href="#game.areStraightLine" title="Permalink to this definition">¶</a></dt>
+<dt id="game.are_straight_line">
+<code class="descclassname">game.</code><code class="descname">are_straight_line</code><span class="sig-paren">(</span><em>spaces</em><span class="sig-paren">)</span><a class="headerlink" href="#game.are_straight_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the given spaces form a straight line.</p>
 <p>This is a required for a valid move.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -101,14 +101,14 @@ behavior. It is only intended as a help function for
 </dd></dl>
 
 <dl class="function">
-<dt id="game.fillBoard">
-<code class="descclassname">game.</code><code class="descname">fillBoard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game.fillBoard" title="Permalink to this definition">¶</a></dt>
+<dt id="game.fill_board">
+<code class="descclassname">game.</code><code class="descname">fill_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game.fill_board" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill the <code class="docutils literal notranslate"><span class="pre">board</span></code> dict with the <a class="reference external" href="https://en.wikipedia.org/wiki/File:Abalone_standard.svg">default initial position</a>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.fromHeadToTail">
-<code class="descclassname">game.</code><code class="descname">fromHeadToTail</code><span class="sig-paren">(</span><em>spaces</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#game.fromHeadToTail" title="Permalink to this definition">¶</a></dt>
+<dt id="game.from_head_to_tail">
+<code class="descclassname">game.</code><code class="descname">from_head_to_tail</code><span class="sig-paren">(</span><em>spaces</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#game.from_head_to_tail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort a straight line of spaces by a certain direction so that the head
 comes first.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -148,8 +148,8 @@ comes first.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.inLine">
-<code class="descclassname">game.</code><code class="descname">inLine</code><span class="sig-paren">(</span><em>marbles</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#game.inLine" title="Permalink to this definition">¶</a></dt>
+<dt id="game.in_line">
+<code class="descclassname">game.</code><code class="descname">in_line</code><span class="sig-paren">(</span><em>marbles</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#game.in_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform an in-line move, sumito if applicable.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -195,8 +195,8 @@ behavior. It is only intended as a help function for
 </dd></dl>
 
 <dl class="function">
-<dt id="game.isCurrentPlayer">
-<code class="descclassname">game.</code><code class="descname">isCurrentPlayer</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.isCurrentPlayer" title="Permalink to this definition">¶</a></dt>
+<dt id="game.is_current_player">
+<code class="descclassname">game.</code><code class="descname">is_current_player</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.is_current_player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a space is owned by the current player.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -213,8 +213,8 @@ behavior. It is only intended as a help function for
 </dd></dl>
 
 <dl class="function">
-<dt id="game.isEmpty">
-<code class="descclassname">game.</code><code class="descname">isEmpty</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.isEmpty" title="Permalink to this definition">¶</a></dt>
+<dt id="game.is_empty">
+<code class="descclassname">game.</code><code class="descname">is_empty</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a space is empty.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -231,8 +231,8 @@ behavior. It is only intended as a help function for
 </dd></dl>
 
 <dl class="function">
-<dt id="game.isOpponent">
-<code class="descclassname">game.</code><code class="descname">isOpponent</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.isOpponent" title="Permalink to this definition">¶</a></dt>
+<dt id="game.is_opponent">
+<code class="descclassname">game.</code><code class="descname">is_opponent</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.is_opponent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a space is owned by the opponent player.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -343,8 +343,8 @@ neighbor in the given direction</td>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.onOffBoard">
-<code class="descclassname">game.</code><code class="descname">onOffBoard</code><span class="sig-paren">(</span><em>player</em><span class="sig-paren">)</span><a class="headerlink" href="#game.onOffBoard" title="Permalink to this definition">¶</a></dt>
+<dt id="game.on_off_board">
+<code class="descclassname">game.</code><code class="descname">on_off_board</code><span class="sig-paren">(</span><em>player</em><span class="sig-paren">)</span><a class="headerlink" href="#game.on_off_board" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduce the score of a player whose marble has been pushed off the board.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -357,8 +357,8 @@ neighbor in the given direction</td>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.parseSpace">
-<code class="descclassname">game.</code><code class="descname">parseSpace</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.parseSpace" title="Permalink to this definition">¶</a></dt>
+<dt id="game.parse_space">
+<code class="descclassname">game.</code><code class="descname">parse_space</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#game.parse_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert any valid space notation to the standard notation.</p>
 <p>A valid string that denotes a space consists of a row letter (from <code class="docutils literal notranslate"><span class="pre">A</span></code> to
 <code class="docutils literal notranslate"><span class="pre">I</span></code>) and a diagonal number (from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>). The notation is
@@ -391,8 +391,8 @@ other things.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.printBoard">
-<code class="descclassname">game.</code><code class="descname">printBoard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game.printBoard" title="Permalink to this definition">¶</a></dt>
+<dt id="game.print_board">
+<code class="descclassname">game.</code><code class="descname">print_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game.print_board" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the board to stdout.</p>
 <p>Player 1 (black) is represented by <code class="docutils literal notranslate"><span class="pre">X</span></code>, player 2 (white) by <code class="docutils literal notranslate"><span class="pre">O</span></code>, empty
 spaces by <code class="docutils literal notranslate"><span class="pre">·</span></code>, e. g.</p>
@@ -411,8 +411,8 @@ E · · · · · · · · ·
 </dd></dl>
 
 <dl class="function">
-<dt id="game.sameRowAndDiagonal">
-<code class="descclassname">game.</code><code class="descname">sameRowAndDiagonal</code><span class="sig-paren">(</span><em>spaces</em><span class="sig-paren">)</span><a class="headerlink" href="#game.sameRowAndDiagonal" title="Permalink to this definition">¶</a></dt>
+<dt id="game.same_row_and_diagonal">
+<code class="descclassname">game.</code><code class="descname">same_row_and_diagonal</code><span class="sig-paren">(</span><em>spaces</em><span class="sig-paren">)</span><a class="headerlink" href="#game.same_row_and_diagonal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicate if the given spaces are in the same row and/or diagonal.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -420,7 +420,7 @@ E · · · · · · · · ·
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spaces</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a list of spaces</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a dict with three keys <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">diagonal</span></code> and <code class="docutils literal notranslate"><span class="pre">diagonalR</span></code></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a dict with three keys <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">diagonal</span></code> and <code class="docutils literal notranslate"><span class="pre">diagonal_r</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -428,7 +428,7 @@ E · · · · · · · · ·
 <li><code class="docutils literal notranslate"><span class="pre">row</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same row (<code class="docutils literal notranslate"><span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">I</span></code>).</li>
 <li><code class="docutils literal notranslate"><span class="pre">diagonal</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same diagonal (<code class="docutils literal notranslate"><span class="pre">1</span></code> to
 <code class="docutils literal notranslate"><span class="pre">9</span></code>). This includes only the diagonals from northwest to southeast.</li>
-<li><code class="docutils literal notranslate"><span class="pre">diagonalR</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same diagonal. This
+<li><code class="docutils literal notranslate"><span class="pre">diagonal_r</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same diagonal. This
 includes only the diagonals from northeast to southwest.</li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
@@ -442,9 +442,9 @@ includes only the diagonals from northeast to southwest.</li>
 </dd></dl>
 
 <dl class="function">
-<dt id="game.togglePlayer">
-<code class="descclassname">game.</code><code class="descname">togglePlayer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game.togglePlayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Switch <code class="docutils literal notranslate"><span class="pre">currentPlayer</span></code> between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<dt id="game.toggle_player">
+<code class="descclassname">game.</code><code class="descname">toggle_player</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#game.toggle_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch <code class="docutils literal notranslate"><span class="pre">current_player</span></code> between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 </dd></dl>
 
 </div>
@@ -458,14 +458,14 @@ includes only the diagonals from northeast to southwest.</li>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="interactivePlayer.html">interactivePlayer module</a>&#160;&#160;»
+        <a href="interactive_player.html">ais.interactive_player module</a>&#160;&#160;»
         </p>
 
       </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018 Scriptim (MIT).
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>
