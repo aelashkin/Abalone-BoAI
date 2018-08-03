@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Abalone &#8212; Abalone BoAI 1.3.0rc documentation</title>
+    <title>abalone module &#8212; Abalone BoAI 2.0.0 documentation</title>
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -15,43 +15,462 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Command Line Interface" href="cli.html" />
-    <link rel="prev" title="Abalone Battle of AIs" href="index.html" /> 
+    <link rel="next" title="ais.interactive_player module" href="interactive_player.html" />
+    <link rel="prev" title="main module" href="main.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
-          <span>Abalone BoAI 1.3.0rc documentation</span></a></h1>
-        <h2 class="heading"><span>Abalone</span></h2>
+          <span>Abalone BoAI 2.0.0 documentation</span></a></h1>
+        <h2 class="heading"><span>abalone module</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="index.html">Abalone Battle of AIs</a>
+        «&#160;&#160;<a href="main.html">main module</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="cli.html">Command Line Interface</a>&#160;&#160;»
+        <a href="interactive_player.html">ais.interactive_player module</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="abalone">
-<h1>Abalone<a class="headerlink" href="#abalone" title="Permalink to this headline">¶</a></h1>
-<p>Abalone is a strategy board game for two players, black and white, each with
-initially 14 marbles on a hexagonal board (<a class="reference external" href="https://en.wikipedia.org/wiki/File:Abalone_standard.svg">initial position</a>). During the game
-these marbles are moved. The first player to push six of the opponent’s marbles
-off the board wins the game.</p>
-<p>After player 1 (black) has started, the game is played alternately. The player
-in turn moves a straight line of either one, two or three marbles in one of six
-directions.</p>
-<p>When a player makes an <em>in-line</em> move (i.e. in one of the two directions in
-which the marble line is aligned), they can push the opponent’s marbles that
-are in the way in front of them. However, they can only push fewer marbles of
-the opponent than they move themselves, hence if the player moves two marbles
-they can push one, if they move three they can push one or two of the
-opponent’s marbles. This kind of move is called <em>sumito</em>. If an opponent’s
-marble is pushed off the edge of the board, they lose it.</p>
+  <div class="section" id="module-abalone">
+<span id="abalone-module"></span><h1>abalone module<a class="headerlink" href="#module-abalone" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="abalone.Game">
+<em class="property">class </em><code class="descclassname">abalone.</code><code class="descname">Game</code><a class="headerlink" href="#abalone.Game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representation of an Abalone game.</p>
+<dl class="method">
+<dt id="abalone.Game.broadside">
+<code class="descname">broadside</code><span class="sig-paren">(</span><em>marbles</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.broadside" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a broadside move.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function should not be called directly, as it does
+not perform input validation, which could lead to
+unpredictable behavior. It is only intended as a help
+function for <a class="reference internal" href="#abalone.Game.move" title="abalone.Game.move"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code></a>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>marbles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the marbles to be moved</li>
+<li><strong>direction</strong> – the direction of movement</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#abalone.Game.move" title="abalone.Game.move"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code></a> for information on the direction parameter</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a clone of the current state of the game.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the clone</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#abalone.Game" title="abalone.Game">Game</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.fill_board">
+<code class="descname">fill_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.fill_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the <code class="docutils literal notranslate"><span class="pre">board</span></code> dict with the <a class="reference external" href="https://en.wikipedia.org/wiki/File:Abalone_standard.svg">default initial position</a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.in_line">
+<code class="descname">in_line</code><span class="sig-paren">(</span><em>marbles</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.in_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform an in-line move, sumito if applicable.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function should not be called directly, as it does
+not perform input validation, which could lead to
+unpredictable behavior. It is only intended as a help
+function for <a class="reference internal" href="#abalone.Game.move" title="abalone.Game.move"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code></a>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>marbles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the marbles to be moved</li>
+<li><strong>direction</strong> – the direction of movement</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#abalone.Game.move" title="abalone.Game.move"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code></a> for information on the direction parameter</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#abalone.IllegalMoveException" title="abalone.IllegalMoveException"><strong>IllegalMoveException</strong></a> – <em>space</em> is not empty</td>
+</tr>
+</tbody>
+</table>
+<p>if the destination space is already occupied</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#abalone.IllegalMoveException" title="abalone.IllegalMoveException"><strong>IllegalMoveException</strong></a> – Moving <em>n</em> marbles with <em>m</em> own marble(s)</td>
+</tr>
+</tbody>
+</table>
+<p>if the move cannot be made due to too few marbles</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.is_current_player">
+<code class="descname">is_current_player</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.is_current_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a space is owned by the current player.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>space</strong> (<em>str</em>) – the space to be checked</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">whether the space is owned by the current player</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.is_empty">
+<code class="descname">is_empty</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a space is empty.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>space</strong> (<em>str</em>) – the space to be checked</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">whether the space is empty</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.is_opponent">
+<code class="descname">is_opponent</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.is_opponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a space is owned by the opponent player.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>space</strong> (<em>str</em>) – the space to be checked</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">whether the space is owned by the opponent player</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>marbles</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a move in a specific direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>marbles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the marbles to be moved</li>
+<li><strong>direction</strong> – the direction of movement</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>6 1
+5 · 2
+4 3
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>northeast</li>
+<li>east</li>
+<li>southeast</li>
+<li>southwest</li>
+<li>west</li>
+<li>northwest</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#abalone.IllegalMoveException" title="abalone.IllegalMoveException"><strong>IllegalMoveException</strong></a> – Moving <em>n</em> marbles</td>
+</tr>
+</tbody>
+</table>
+<p>if the number of marbles is not between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> (inclusive)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="#abalone.IllegalMoveException" title="abalone.IllegalMoveException"><strong>IllegalMoveException</strong></a> – Marbles are not in a straight line</li>
+<li><a class="reference internal" href="#abalone.IllegalMoveException" title="abalone.IllegalMoveException"><strong>IllegalMoveException</strong></a> – <em>space</em> is not empty</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.on_off_board">
+<code class="descname">on_off_board</code><span class="sig-paren">(</span><em>player</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.on_off_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduce the score of a player whose marble has been pushed off the
+board.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player</strong> (<em>int</em>) – the player (<code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.print_board">
+<code class="descname">print_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.print_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the board to stdout.</p>
+<p>Player 1 (black) is represented by <code class="docutils literal notranslate"><span class="pre">X</span></code>, player 2 (white) by <code class="docutils literal notranslate"><span class="pre">O</span></code>,
+empty spaces by <code class="docutils literal notranslate"><span class="pre">·</span></code>, e. g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    I O O O O O
+   H O O O O O O
+  G · · O O O · ·
+ F · · · · · · · ·
+E · · · · · · · · ·
+ D · · · · · · · · 9
+  C · · X X X · · 8
+   B X X X X X X 7
+    A X X X X X 6
+       1 2 3 4 5
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="abalone.Game.toggle_player">
+<code class="descname">toggle_player</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#abalone.Game.toggle_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch <code class="docutils literal notranslate"><span class="pre">current_player</span></code> between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="abalone.IllegalMoveException">
+<em class="property">exception </em><code class="descclassname">abalone.</code><code class="descname">IllegalMoveException</code><a class="headerlink" href="#abalone.IllegalMoveException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Custom Exception to be raised whenever a player performs an illegal
+move.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="abalone.are_straight_line">
+<code class="descclassname">abalone.</code><code class="descname">are_straight_line</code><span class="sig-paren">(</span><em>spaces</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.are_straight_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given spaces form a straight line.</p>
+<p>This is a required for a valid move.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spaces</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a list of spaces</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">whether the spaces form a straight line</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="abalone.from_head_to_tail">
+<code class="descclassname">abalone.</code><code class="descname">from_head_to_tail</code><span class="sig-paren">(</span><em>spaces</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.from_head_to_tail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort a straight line of spaces by a certain direction so that the head
+comes first.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>spaces</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a straight line of spaces</li>
+<li><strong>direction</strong> – the direction in which the spaces are oriented</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code> for information on the direction parameter</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>Exception</strong> – Marbles are not in a straight line</li>
+<li><strong>Exception</strong> – Moving <em>marbles</em> in direction is not an in-line move</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a sorted list of spaces</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="abalone.neighbor">
+<code class="descclassname">abalone.</code><code class="descname">neighbor</code><span class="sig-paren">(</span><em>space</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.neighbor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the adjacent space in a certain direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>space</strong> (<em>str</em>) – the space from which the neighbour is determined</li>
+<li><strong>direction</strong> – the direction</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">move()</span></code> for information on the direction parameter</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>Exception</strong> – Invalid direction</td>
+</tr>
+</tbody>
+</table>
+<p>if the direction is not between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> (inclusive)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the neighbor space in standard notation | <code class="docutils literal notranslate"><span class="pre">0</span></code> if there is no
+neighbor in the given direction</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str | int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="abalone.parse_space">
+<code class="descclassname">abalone.</code><code class="descname">parse_space</code><span class="sig-paren">(</span><em>space</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.parse_space" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert any valid space notation to the standard notation.</p>
+<p>A valid string that denotes a space consists of a row letter (from <code class="docutils literal notranslate"><span class="pre">A</span></code> to
+<code class="docutils literal notranslate"><span class="pre">I</span></code>) and a diagonal number (from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>). The notation is
+case-insensitive and does not require a specific order.</p>
+<p>The standard notation starts with a capital row letter followed by a
+diagonal number. It is used for the keys in the <code class="docutils literal notranslate"><span class="pre">board</span></code> dict, among
+other things.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>space</strong> (<em>str</em>) – a space in any valid notation</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>TypeError</strong> – Invalid type (str expected)</li>
+<li><strong>Error</strong> – Invalid string length (2 expected)</li>
+<li><strong>Error</strong> – Invalid string notation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the standard notation for the given space</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="abalone.same_row_and_diagonal">
+<code class="descclassname">abalone.</code><code class="descname">same_row_and_diagonal</code><span class="sig-paren">(</span><em>spaces</em><span class="sig-paren">)</span><a class="headerlink" href="#abalone.same_row_and_diagonal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate if the given spaces are in the same row and/or diagonal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spaces</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a list of spaces</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a dict with three keys <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">diagonal</span></code> and <code class="docutils literal notranslate"><span class="pre">diagonal_r</span></code></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">row</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same row (<code class="docutils literal notranslate"><span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">I</span></code>).</li>
+<li><code class="docutils literal notranslate"><span class="pre">diagonal</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same diagonal (<code class="docutils literal notranslate"><span class="pre">1</span></code> to
+<code class="docutils literal notranslate"><span class="pre">9</span></code>). This includes only the diagonals from northwest to southeast.</li>
+<li><code class="docutils literal notranslate"><span class="pre">diagonal_r</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the spaces are in the same diagonal. This
+includes only the diagonals from northeast to southwest.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict[str, bool]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -59,11 +478,11 @@ marble is pushed off the edge of the board, they lose it.</p>
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="index.html">Abalone Battle of AIs</a>
+        «&#160;&#160;<a href="main.html">main module</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="cli.html">Command Line Interface</a>&#160;&#160;»
+        <a href="interactive_player.html">ais.interactive_player module</a>&#160;&#160;»
         </p>
 
       </div>
